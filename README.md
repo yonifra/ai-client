@@ -1,19 +1,34 @@
-## AI Client
-#### A simple ChatGPT interface for node
 
-#### What is this?
+# ChatGPT Client: A Simple Node.js Interface
 
-As the title implies, this package is a lightweight and easy-to-use utility for interacting with OpenAI's ChatGPT service. It's great for when you want to add some AI abilities to your projects and strives to be as simple as possible by:
+### Introduction
+This lightweight and easy-to-use Node.js library provides seamless integration with OpenAI's ChatGPT service, empowering you to add AI functionalities to your projects with minimal effort.
 
-* Adding logical defaults for when you're not sure what the configuration should be. (For example, which `model` should you use)
-* Making the code as readable as possible for when you want to debug it.
-* Simple package - currently one small file that does the job. (Later this might be expanded, but I always strive for an as small as possible package)
+### Key Features
+* **Intuitive Defaults:** Smart defaults automatically fill in missing parameters, eliminating the need for complex configurations (e.g., selecting the optimal model).
+* **Readable Code:** Well-structured code facilitates debugging and understanding.
+* **Compact Footprint:** Currently resides in a single file, prioritizing a minimal code size (future expansion is possible).
 
-### Installation
+### Getting Started
 
-* Obtain an OpenAI API key by going to [OpenAI API](https://openai.com/blog/openai-api) page, signing up and getting an API key. (This may require you to add some payment information as calling their API costs money)
-* [TIP] Add the API key to the `.env` file in the root of your project to avoid exposing it out in GitHub (also, make sure to exclude the file in your `.gitignore` file)
-* Run `npm i ai-client` in the root of your project. (This will add the package to your project's dependencies)
-* Import the code into your Javascript application by adding `import * as AIClient from 'ai-client'`
-* Initialize the client by passing it the API key, model you wish to use and other parameters you might want to tweak.
-* Use `AIClient` to run the prompts
+1. Obtain an OpenAI API Key:
+
+* Visit the [OpenAI API page](https://openai.com/blog/openai-api) and create an account.
+* Generate an API key (may require payment information as API calls incur costs).
+* **Pro Tip:** Securely store your API key in a `.env` file at your project root (exclude it from your `.gitignore` file).
+
+2. Installation:
+
+* Execute `npm install ai-client` in your project directory.
+* Import the code: `import * as AIClient from 'ai-client'`
+
+
+3. Initialization:
+
+* Create an instance of the `AIClient` class, passing your API key, desired model, and any optional parameters.
+
+4. Run Prompts:
+* Utilize the AIClient object to execute your prompts.
+
+
+**Made with ❤️ by [yonifra](https://github.com/yonifra)**
