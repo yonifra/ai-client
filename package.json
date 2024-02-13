@@ -1,6 +1,6 @@
 {
   "name": "ai-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An AI client for using OpenAI ChatGPT API easily in your projects",
   "main": "index.ts",
   "scripts": {
