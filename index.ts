@@ -19,16 +19,17 @@ class AIClient {
   /// @param prompt The prompt to generate a response to
   /// @param maxTokens The maximum number of tokens to use when generating the response
   /// @param content The content of the previous message in the chat
-  async generateResponse(
+  async ask(
     prompt: string = '',
-    maxTokens: number = 1400,
+    content: string = '',
+    openAiKey: string = '',
+    maxTokensToUse: number = 1400,
     modelType: ModelType = ModelType.Gpt35Turbo0125,
-    content: string = ''
   ) {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+        Authorization: `Bearer ${openAiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -40,12 +41,13 @@ class AIClient {
           },
           { role: 'user', content: prompt },
         ],
-        max_tokens: maxTokens,
+        max_tokens: maxTokensToUse,
       }),
     })
+    .then(async response => await response.json())
+    .catch((error) => {console.error(error.message)})
 
-    const data = await response.json()
-    return data.choices[0].message.content
+    return response.choices[0].message.content
   }
 }
 
