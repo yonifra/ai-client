@@ -1,5 +1,6 @@
 enum ModelType {
   Gpt35Turbo = 'gpt-3.5-turbo',
+  Gpt35Turbo0125 = 'gpt-3.5-turbo-0125',
   Gpt35Turbo16K = 'gpt-3.5-turbo-16k',
   Gpt35TurboInstruct = 'gpt-3.5-turbo-instruct',
   Gpt35Turbo0613 = 'gpt-3.5-turbo-0613',
@@ -8,6 +9,7 @@ enum ModelType {
   Gpt40613 = 'gpt-4-0613',
   Gpt432K = 'gpt-4-32k',
   Gpt432K0613 = 'gpt-4-32k-0613',
+  Gpt4Turbo = 'gpt-4-0125-preview',
   Babbage = 'babbage-002',
   Davinci = 'davinci-002',
 }
@@ -19,8 +21,8 @@ class AIClient {
   /// @param content The content of the previous message in the chat
   async generateResponse(
     prompt: string = '',
-    maxTokens: number = 1200,
-    modelType: ModelType = ModelType.Gpt35Turbo,
+    maxTokens: number = 1400,
+    modelType: ModelType = ModelType.Gpt35Turbo0125,
     content: string = ''
   ) {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
